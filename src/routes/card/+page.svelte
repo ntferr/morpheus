@@ -3,5 +3,5 @@
 </div>
 
 <div class=content>
-    <a href="/.."><h2>Home</h2></a>
+    <a href="/.."><h2>&#129184;</h2></a>
 </div>

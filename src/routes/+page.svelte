@@ -14,7 +14,7 @@
     <div>
         <h2>Cadastro</h2>
         <ul>
-            <a href="/bank" onclick="getBanks();">Bancos</a>
+            <a href="/bank">Bancos</a>
             <a href="/card">Cartões</a>
         </ul>
     </div>
