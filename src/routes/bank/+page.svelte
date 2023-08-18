@@ -1,16 +1,9 @@
-<div class=header>
-    <h1>Morpheus</h1>
-</div>
-
-
 <script>
-    // let result = null
+    import Banklist from "./banklist.svelte";'./baklist.svelte'
 
     export async function createBank() {
         const bankName = document.getElementById("bankName").value;
         const bankNumber = document.getElementById("bankNumber").value;
-
-        console.log(bankName, bankNumber)
 
         const res = await fetch('http://127.0.0.1:8000/banks', {
             method: 'POST',
@@ -23,18 +16,18 @@
                 "number": bankNumber
             })
         })
-
-        res.json().then(data => {
-            console.log(JSON.stringify(data))
-        })
-        // result = JSON.stringify(json)
+        location.reload(true)
     }
 </script>
 
+<div class=header>
+    <h1>Morpheus</h1>
+</div>    
+<div>
 <div class=content>
-    <div>
         <a href="/..">&#129184;</a>
         <h2>Bancos</h2>
+        <Banklist/>
         <form>
             <div for="bankName">
                 <label for= "bankName">Name: <abbr title="required"></abbr></label>
@@ -50,6 +43,5 @@
 
             <button on:click={createBank}>Send</button>
         </form>
-
     </div>
 </div>
