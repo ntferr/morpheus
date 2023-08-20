@@ -18,9 +18,8 @@
 
 <div class="listOfBanks">
     <ul>
-        <ul><p>Name - Code</p></ul>
         {#each listOfBanks as object}
-            <ul>{object.name} - {object.code}</ul>
+            <ul>{object.id} - {object.name} - {object.code}</ul>
         {/each}
     </ul>
 </div>
