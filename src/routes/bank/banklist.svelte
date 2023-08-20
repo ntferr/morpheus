@@ -18,9 +18,9 @@
 
 <div class="listOfBanks">
     <ul>
-        <ul><p>Name - Number</p></ul>
+        <ul><p>Name - Code</p></ul>
         {#each listOfBanks as object}
-            <ul>{object.name} - {object.number}</ul>
+            <ul>{object.name} - {object.code}</ul>
         {/each}
     </ul>
 </div>

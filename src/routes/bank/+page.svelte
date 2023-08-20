@@ -3,7 +3,7 @@
 
     export async function createBank() {
         const bankName = document.getElementById("bankName").value;
-        const bankNumber = document.getElementById("bankNumber").value;
+        const bankCode = document.getElementById("bankCode").value;
 
         const res = await fetch('http://127.0.0.1:8000/banks', {
             method: 'POST',
@@ -13,9 +13,14 @@
             },
             body: JSON.stringify({
                 "name": bankName,
-                "number": bankNumber
+                "code": bankCode
             })
         })
+        
+        if(!res.ok) {
+            throw new Error(res.json());
+        }
+
         location.reload(true)
     }
 </script>
@@ -35,10 +40,10 @@
                 <input type="text" name="bankName" id="bankName"/>
             </div>
 
-            <div for="bankNumber">
-                <label for= "bankNumber">Number: <abbr title="required"></abbr></label>
+            <div for="bankCode">
+                <label for= "bankCode">Code: <abbr title="required"></abbr></label>
                 <br/>
-                <input type="text" name="bankNumber" id="bankNumber"/>
+                <input type="text" name="bankCode" id="bankCode"/>
             </div>
 
             <button on:click={createBank}>Send</button>
