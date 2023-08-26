@@ -1,8 +1,7 @@
 <script>
         import {onMount} from 'svelte'
 
-        let listOfBanks = [];
-
+        export let listOfBanks = [];
 
         onMount(async () => {
             const res = await fetch('http://127.0.0.1:8000/banks/all', {
@@ -19,7 +18,7 @@
 <div class="listOfBanks">
     <ul>
         {#each listOfBanks as object}
-            <ul>{object.id} - {object.name} - {object.code}</ul>
+            <ul>{object.name} - {object.code}</ul>
         {/each}
     </ul>
 </div>
