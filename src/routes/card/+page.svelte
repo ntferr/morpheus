@@ -1,3 +1,8 @@
+<script>
+        import {bankStore} from "../../store/bank.js"
+        import Createcard from "./createcard.svelte"
+</script>
+
 <div class=header>
     <h1>Morpheus</h1>
 </div>
@@ -5,9 +10,23 @@
     <a href="/.."><h2>&#129184;</h2></a>
     <h2>Cartões</h2>
     <form>
-        <div for="cardNumber">
-            <label for="cardNumber">Number: <abbr title="required"></abbr></label>
+        <div>
+            <select id="bankID">
+                {#each $bankStore as bank}
+                    <option value="{bank.id}">{bank.name}</option>
+                {/each}
+            </select>
+            <div for="cardNumberDiv">
+                <label for="cardNumberLabel">Number: <abbr title="required"></abbr></label>
+                <br/>
+                <input type="text" id="cardNumber"/>
+            </div>
+            <div for="expireAtDiv">
+                <label for= "expireAtLabel">Expire Date: <abbr title="required"></abbr></label>
+                <input type="month" id="expireAt" value="2023-01"/>
+            </div>
             <br/>
+            <Createcard />
         </div>
     </form>
 </div>

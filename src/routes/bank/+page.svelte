@@ -12,18 +12,18 @@
         <h2>Bancos</h2>
         <Banklist/>
         <form>
-            <div for="bankName">
-                <label for= "bankName">Name: <abbr title="required"></abbr></label>
+            <div for="bankNameDiv">
+                <label for= "bankNameLabel">Name: <abbr title="required"></abbr></label>
                 <br/>
                 <input type="text" name="bankName" id="bankName"/>
             </div>
 
-            <div for="bankCode">
-                <label for= "bankCode">Code: <abbr title="required"></abbr></label>
+            <div for="bankCodeDiv">
+                <label for= "bankCodeLabel">Code: <abbr title="required"></abbr></label>
                 <br/>
                 <input type="text" name="bankCode" id="bankCode"/>
             </div>
-            <Createbank />
+            <Createbank/>
         </form>
     </div>
 </div>

@@ -1,24 +1,16 @@
 <script>
         import {onMount} from 'svelte'
-
-        export let listOfBanks = [];
+        import {bankStore, fetchBanks} from '../../store/bank.js'
 
         onMount(async () => {
-            const res = await fetch('http://127.0.0.1:8000/banks/all', {
-                method: 'GET',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                },
-            });
-            listOfBanks = await res.json();
+            await fetchBanks()
         });
 </script>
 
 <div class="listOfBanks">
     <ul>
-        {#each listOfBanks as object}
-            <ul>{object.name} - {object.code}</ul>
+        {#each $bankStore as bank}
+            <li>{bank.name} - {bank.code}</li>
         {/each}
     </ul>
 </div>

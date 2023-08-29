@@ -1,5 +1,5 @@
 <script>
-    export async function createBank() {
+    async function createBank() {
         const bankName = document.getElementById("bankName").value;
         const bankCode = document.getElementById("bankCode").value;
 
