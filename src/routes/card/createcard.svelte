@@ -10,8 +10,6 @@
         card.bank_id = document.getElementById("bankID").value;
         card.number = document.getElementById("cardNumber").value;
         card.expire_at = document.getElementById("expireAt").value;
-        
-        console.log(card);
 
         const res = await fetch('http://127.0.0.1:8000/cards', {
             method: 'POST',
@@ -22,7 +20,6 @@
             body: JSON.stringify(card)
         });
     }
-
 </script>
 
 <button on:click={createCard}>Send</button>
