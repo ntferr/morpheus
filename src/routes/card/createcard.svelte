@@ -19,6 +19,9 @@
             },
             body: JSON.stringify(card)
         });
+    
+        location.reload(true)
+
     }
 </script>
 
