@@ -1,7 +1,7 @@
 <script>
         import { bankStore } from "../../store/bank.js"
-        import Createcard from "./createcard.svelte"
-        import { cardStore } from "../../store/card.js"
+        import CreateCard from "./createcard.svelte"
+        import CardList from "./cardlist.svelte"
 </script>
 
 <div class=header>
@@ -29,18 +29,9 @@
                     <input type="month" id="expireAt" value="2023-01"/>
                 </div>
                 <br/>
-                <Createcard />
+                <CreateCard />
             </div>
         </form>
-    </div>
-</div>
-
-<div>
-    <div class="listOfCards">
-           <ul>
-                {#each $cardStore as card}
-                    <li>{card.number} - {card.expire_at}</li>
-                {/each}
-           </ul> 
+        <CardList />
     </div>
 </div>

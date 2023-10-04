@@ -19,6 +19,7 @@
         <ul>
             <a href="/bank">Bancos</a>
             <a href="/card">Cartões</a>
+            <a href="/debit">Débitos</a>
         </ul>
     </div>
 </div>
