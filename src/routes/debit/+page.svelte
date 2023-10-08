@@ -17,35 +17,49 @@
                         <option value="{card.id}">{card.number}</option>
                     {/each}
                 </select>
-                <div for="debitNameDiv">
-                    <label for="debitNameLabel">Holder<abbr title="required"></abbr></label>
-                    <br/>
-                    <input type="text" name="debitName" id="debitName"/>
+                <div for="debitDiv">
+                    <div for="debitNameDiv">
+                        <label for="debitNameLabel">Holder<abbr title="required"></abbr></label>
+                        <br/>
+                        <input type="text" name="debitName" id="debitName"/>
+                    </div>
+                    <div for="debitDescriptionDiv">
+                        <label for="debitDescriptionLabel">Description</label>
+                        <br/>
+                        <input type="text" name="debitDescription" id="debitDescription"/>
+                    </div>
+                    <div for="debitValueDiv">
+                        <label for="debitValueLabel">Value<abbr title="required"></abbr></label>
+                        <br/>
+                        <input type="number" step="0.01" name="debitNumber" id="debitNumber">
+                    </div>
+                    <div for="debitRecurrentDiv">
+                        <label for="debitRecurrentLabel">Recurrent</label>
+                        <br/>
+                        <input type="checkbox" name="debitRecurrent" id="debitRecurrent"/>
+                    </div>
+                    <div for="debitPaidDiv">
+                        <label for="debitPaidLabel">Paid</label>
+                        <br/>
+                        <input type="checkbox" name="debitPaid" id="debitPaid"/>
+                    </div>
+                    <div for="debitDueDateDiv">
+                        <label for="debitDueDateLabel">Due Date<abbr title="required"></abbr></label>
+                        <br/>
+                        <input type="date" name="debitDate" id="debitDate" />
+                    </div>
                 </div>
-                <div for="debitDescriptionDiv">
-                    <label for="debitDescriptionLabel">Description</label>
-                    <br/>
-                    <input type="text" name="debitDescription" id="debitDescription"/>
+                <div for="installmentDiv">
+                    <div for="installmentNumberDiv">
+                        <label for="installmentNumberDiv">Instalment Number</label>
+                        <br/>
+                        <input type="number" step="0" name="instalmentNumber" id="instalmentNumber">
+                    </div>
                 </div>
-                <div for="debitValueDiv">
-                    <label for="debitValueLabel">Value<abbr title="required"></abbr></label>
+                <div for="ticketDiv">
+                    <label for="ticketBars">Ticket Bars</label>
                     <br/>
-                    <input type="number" step="0.01" name="debitNumber" id="debitNumber">
-                </div>
-                <div for="debitRecurrentDiv">
-                    <label for="debitRecurrentLabel">Recurrent</label>
-                    <br/>
-                    <input type="checkbox" name="debitRecurrent" id="debitRecurrent"/>
-                </div>
-                <div for="debitPaidDiv">
-                    <label for="debitPaidLabel">Paid</label>
-                    <br/>
-                    <input type="checkbox" name="debitPaid" id="debitPaid"/>
-                </div>
-                <div for="debitDueDateDiv">
-                    <label for="debitDueDateLabel">Due Date</label>
-                    <br/>
-                    <input type="date" />
+                    <input type="text" name="ticketBars" id="ticketBars"/>
                 </div>
             </div>
         </form>
