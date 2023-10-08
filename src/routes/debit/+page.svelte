@@ -1,3 +1,7 @@
+<script>
+    import { cardStore } from "../../store/card"
+</script>
+
 <div class=header>
     <h1>Morpheus</h1>
 </div>
@@ -5,5 +9,45 @@
 <div>
     <div class=content>
         <a href="/..">&#129184;</a>
+        <h2>Débitos</h2>
+        <form>
+            <div>
+                <select>
+                    {#each $cardStore as card }
+                        <option value="{card.id}">{card.number}</option>
+                    {/each}
+                </select>
+                <div for="debitNameDiv">
+                    <label for="debitNameLabel">Holder<abbr title="required"></abbr></label>
+                    <br/>
+                    <input type="text" name="debitName" id="debitName"/>
+                </div>
+                <div for="debitDescriptionDiv">
+                    <label for="debitDescriptionLabel">Description</label>
+                    <br/>
+                    <input type="text" name="debitDescription" id="debitDescription"/>
+                </div>
+                <div for="debitValueDiv">
+                    <label for="debitValueLabel">Value<abbr title="required"></abbr></label>
+                    <br/>
+                    <input type="number" step="0.01" name="debitNumber" id="debitNumber">
+                </div>
+                <div for="debitRecurrentDiv">
+                    <label for="debitRecurrentLabel">Recurrent</label>
+                    <br/>
+                    <input type="checkbox" name="debitRecurrent" id="debitRecurrent"/>
+                </div>
+                <div for="debitPaidDiv">
+                    <label for="debitPaidLabel">Paid</label>
+                    <br/>
+                    <input type="checkbox" name="debitPaid" id="debitPaid"/>
+                </div>
+                <div for="debitDueDateDiv">
+                    <label for="debitDueDateLabel">Due Date</label>
+                    <br/>
+                    <input type="date" />
+                </div>
+            </div>
+        </form>
     </div>
 </div>

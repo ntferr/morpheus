@@ -26,12 +26,15 @@
                 </div>
                 <div for="expireAtDiv">
                     <label for= "expireAtLabel">Expire Date: <abbr title="required"></abbr></label>
+                    <br/>
                     <input type="month" id="expireAt" value="2023-01"/>
                 </div>
                 <br/>
                 <CreateCard />
             </div>
         </form>
-        <CardList />
+        <div class=cards>
+            <CardList />
+        </div>
     </div>
 </div>
