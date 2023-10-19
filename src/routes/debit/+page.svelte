@@ -1,5 +1,6 @@
 <script>
     import { cardStore } from "../../store/card"
+    import Createdebit from "./createdebit.svelte";
 </script>
 
 <div class=header>
@@ -12,16 +13,16 @@
         <h2>Débitos</h2>
         <form>
             <div>
-                <select>
+                <select id="cardID">
                     {#each $cardStore as card }
                         <option value="{card.id}">{card.number}</option>
                     {/each}
                 </select>
                 <div for="debitDiv">
                     <div for="debitNameDiv">
-                        <label for="debitNameLabel">Holder<abbr title="required"></abbr></label>
+                        <label for="debitHolderLabel">Name<abbr title="required"></abbr></label>
                         <br/>
-                        <input type="text" name="debitName" id="debitName"/>
+                        <input type="text" name="debitHolder" id="debitHolder"/>
                     </div>
                     <div for="debitDescriptionDiv">
                         <label for="debitDescriptionLabel">Description</label>
@@ -31,7 +32,7 @@
                     <div for="debitValueDiv">
                         <label for="debitValueLabel">Value<abbr title="required"></abbr></label>
                         <br/>
-                        <input type="number" step="0.01" name="debitNumber" id="debitNumber">
+                        <input type="number" step="0.01" name="debitValue" id="debitValue">
                     </div>
                     <div for="debitRecurrentDiv">
                         <label for="debitRecurrentLabel">Recurrent</label>
@@ -62,6 +63,7 @@
                     <input type="text" name="ticketBars" id="ticketBars"/>
                 </div>
             </div>
+            <Createdebit/>
         </form>
     </div>
 </div>
